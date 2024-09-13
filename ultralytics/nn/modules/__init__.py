@@ -62,7 +62,7 @@ from .conv import (
     InjectionMultiSum_Auto_pool,
     PyramidPoolAgg,
     AdvPoolFusion,
-    TopBasicLayer
+    TopBasicLayer,
     CBAM,
     ChannelAttention,
     Concat,
