@@ -56,6 +56,13 @@ from .block import (
     SCDown,
 )
 from .conv import (
+    SimFusion_4in,
+    SimFusion_3in,
+    IFM,
+    InjectionMultiSum_Auto_pool,
+    PyramidPoolAgg,
+    AdvPoolFusion,
+    TopBasicLayer
     CBAM,
     ChannelAttention,
     Concat,
