@@ -14,7 +14,7 @@ from ultralytics.nn.modules import (
     InjectionMultiSum_Auto_pool,
     PyramidPoolAgg,
     AdvPoolFusion,
-    TopBasicLayer
+    TopBasicLayer,
     AIFI,
     C1,
     C2,
