@@ -32,7 +32,23 @@ def autopad(k, p=None, d=1):  # kernel, padding, dilation
         p = k // 2 if isinstance(k, int) else [x // 2 for x in k]  # auto-pad
     return p
 
-
+class SimConv(nn.Module):
+    '''Normal Conv with ReLU VAN_activation'''
+    
+    def __init__(self, c1, c2, k=1, s=1, g=1, d=1, bias=False, p=None):
+        super().__init__()
+       
+        self.conv = nn.Conv2d(c1, c2, k, s, autopad(k, p, d), groups=g, dilation=d, bias=False)
+        self.bn = nn.BatchNorm2d(c2)
+        #self.act = nn.LeakyReLU()
+        self.act = nn.Mish()
+    
+    def forward(self, x):
+        return self.act(self.bn(self.conv(x)))
+    
+    def forward_fuse(self, x):
+        return self.act(self.conv(x))
+        
 class Conv(nn.Module):
     """Standard convolution with args(ch_in, ch_out, kernel, stride, padding, groups, dilation, activation)."""
 
