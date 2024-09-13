@@ -19,6 +19,7 @@ from ultralytics.nn.modules import (
     SPP,
     SPPELAN,
     SPPF,
+    SimSPPF,
     AConv,
     ADown,
     Bottleneck,
@@ -33,6 +34,7 @@ from ultralytics.nn.modules import (
     Classify,
     Concat,
     Conv,
+    SimConv,
     Conv2,
     ConvTranspose,
     Detect,
@@ -910,6 +912,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
         n = n_ = max(round(n * depth), 1) if n > 1 else n  # depth gain
         if m in {
             Classify,
+            SimConv,
             Conv,
             ConvTranspose,
             GhostConv,
@@ -917,6 +920,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             GhostBottleneck,
             SPP,
             SPPF,
+            SimSPPF,
             DWConv,
             Focus,
             BottleneckCSP,
