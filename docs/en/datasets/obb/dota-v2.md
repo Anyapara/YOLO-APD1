@@ -111,15 +111,15 @@ To train a model on the DOTA v1 dataset, you can utilize the following code snip
         # Create a new YOLOv8n-OBB model from scratch
         model = YOLO("yolov8n-obb.yaml")
 
-        # Train the model on the DOTAv1 dataset
-        results = model.train(data="DOTAv1.yaml", epochs=100, imgsz=1024)
+        # Train the model on the DOTAv2 dataset
+        results = model.train(data="DOTAv1.yaml", epochs=100, imgsz=640)
         ```
 
     === "CLI"
 
         ```bash
-        # Train a new YOLOv8n-OBB model on the DOTAv1 dataset
-        yolo obb train data=DOTAv1.yaml model=yolov8n-obb.pt epochs=100 imgsz=1024
+        # Train a new YOLOv8n-OBB model on the DOTAv2 dataset
+        yolo obb train data=DOTAv1.yaml model=yolov8n-obb.pt epochs=100 imgsz=640
         ```
 
 ## Sample Data and Annotations
@@ -180,14 +180,14 @@ To train a model on the DOTA dataset, you can use the following example with Ult
         model = YOLO("yolov8n-obb.yaml")
 
         # Train the model on the DOTAv1 dataset
-        results = model.train(data="DOTAv1.yaml", epochs=100, imgsz=1024)
+        results = model.train(data="DOTAv1.yaml", epochs=100, imgsz=640)
         ```
 
     === "CLI"
 
         ```bash
         # Train a new YOLOv8n-OBB model on the DOTAv1 dataset
-        yolo obb train data=DOTAv1.yaml model=yolov8n-obb.pt epochs=100 imgsz=1024
+        yolo obb train data=DOTAv1.yaml model=yolov8n-obb.pt epochs=100 imgsz=640
         ```
 
 For more details on how to split and preprocess the DOTA images, refer to the [split DOTA images section](#split-dota-images).
